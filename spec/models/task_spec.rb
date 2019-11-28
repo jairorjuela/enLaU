@@ -17,4 +17,20 @@ RSpec.describe Task, type: :model do
       expect(subject).to be_valid
     end
   end
+
+  describe "Whit a invalid attributes" do
+    it "is invalid if state is nil" do
+      subject.state = nil
+
+      expect(subject).to be_invalid
+      expect(subject.errors[:state]).to eq(["is not a number"])
+    end
+
+    it "is invalid if name is nil" do
+      subject.name = nil
+
+      expect(subject).to be_invalid
+      expect(subject.errors[:name]).to eq(["El nombre es obligatorio"])
+    end
+  end
 end
