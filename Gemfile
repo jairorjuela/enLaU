@@ -37,6 +37,8 @@ group :development, :test do
     gem lib, :git => "https://github.com/rspec/#{lib}.git", :branch => 'master'
   end
   gem 'factory_bot_rails'
+  gem 'shoulda-matchers'
+  gem 'faker'
 end
 
 group :development do
